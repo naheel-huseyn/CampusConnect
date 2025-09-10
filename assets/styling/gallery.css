@@ -168,3 +168,32 @@ body {
   line-height: 1.8;
   color: #333;
 }
+.gallery-filters {
+  text-align: center;
+  margin: 30px 0 20px;
+}
+
+.gallery-filters label {
+  font-size: 18px;
+  font-weight: 600;
+  color: transparent;
+  margin-right: 10px;
+}
+
+.gallery-filters select {
+  padding: 10px 16px;
+  font-size: 16px;
+  border: 2px solid #1e90ff;   /* red accent */
+  border-radius: 30px;         /* rounded look */
+  background-color: #fff;
+  color: #1e90ff;
+  font-weight: 500;
+  outline: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-filters select:hover {
+  background-color: #fff;
+  color: #1e90ff;
+}

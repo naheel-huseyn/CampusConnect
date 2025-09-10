@@ -1,23 +1,14 @@
-// ===== Filter Functionality =====
-const filterBtns = document.querySelectorAll(".filter-btn");
-const cards = document.querySelectorAll("#lightgallery a"); // direct <a> select karo
+document.getElementById("monthFilter").addEventListener("change", function () {
+  const selectedMonth = this.value;
+  const cards = document.querySelectorAll("#lightgallery a");
 
-filterBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    // Active button highlight
-    filterBtns.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-
-    const filter = btn.getAttribute("data-filter");
-
-    cards.forEach(card => {
-      const category = card.getAttribute("data-category"); // ab a tag ka attribute check hoga
-      if (filter === "all" || category === filter) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
-      }
-    });
+  cards.forEach(card => {
+    const date = card.getAttribute("data-date"); // e.g. 2025-03-10
+    if (selectedMonth === "all" || date.startsWith(selectedMonth)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
   });
 });
 

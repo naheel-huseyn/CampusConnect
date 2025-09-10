@@ -52,53 +52,90 @@
 </section>
 
 <section class="gallery">
-  <!-- Filter Buttons -->
-  <div class="filters">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="sports">Sports</button>
-    <button class="filter-btn" data-filter="seminar">Seminars</button>
-    <button class="filter-btn" data-filter="fest">Festivals</button>
-    <button class="filter-btn" data-filter="workshop">Workshops</button>
-  </div>
+<!-- Filter Buttons -->
+<div class="filters">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="sports">Sports</button>
+  <button class="filter-btn" data-filter="seminar">Seminars</button>
+  <button class="filter-btn" data-filter="fest">Festivals</button>
+  <button class="filter-btn" data-filter="workshop">Workshops</button>
 
-  <!-- Gallery Cards with Lightbox -->
+<div class="gallery-filters">
+  <select id="monthFilter">
+    <option value="all">All Months</option>
+    <option value="2025-01">January 2025</option>
+    <option value="2025-02">February 2025</option>
+    <option value="2025-03">March 2025</option>
+    <option value="2025-04">April 2025</option>
+    <option value="2025-05">May 2025</option>
+    <!-- aur months yahan add kar sakti ho -->
+  </select>
+</div>
+
+<!-- Gallery Cards with Lightbox -->
 <div id="lightgallery" class="card__container">
-  <a href="assets/images/GALLERY/images (1).jfif" data-category="seminar">
+
+  <a href="assets/images/GALLERY/images (1).jfif" data-category="seminar" data-date="2025-01-10">
     <div class="card" style="background-image: url('assets/images/GALLERY/images (1).jfif');"></div>
   </a>
 
-  <a href="assets/images/GALLERY/images (2).jfif" data-category="fest">
+  <a href="assets/images/GALLERY/images (2).jfif" data-category="fest" data-date="2025-02-05">
     <div class="card" style="background-image: url('assets/images/GALLERY/images (2).jfif');"></div>
   </a>
 
-  <a href="assets/images/GALLERY/images (3).jfif" data-category="fest">
+  <a href="assets/images/GALLERY/images (3).jfif" data-category="fest" data-date="2025-02-08">
     <div class="card" style="background-image: url('assets/images/GALLERY/images (3).jfif');"></div>
   </a>
 
-  <a href="assets/images/GALLERY/images (4).jfif" data-category="fest">
+  <a href="assets/images/GALLERY/images (4).jfif" data-category="fest" data-date="2025-02-12">
     <div class="card" style="background-image: url('assets/images/GALLERY/images (4).jfif');"></div>
   </a>
 
-  <a href="assets/images/GALLERY/images (5).jfif" data-category="workshop">
+  <a href="assets/images/GALLERY/images (5).jfif" data-category="workshop" data-date="2025-03-01">
     <div class="card" style="background-image: url('assets/images/GALLERY/images (5).jfif');"></div>
   </a>
 
-  <a href="assets/images/GALLERY/images (6).jfif" data-category="seminar">
+  <a href="assets/images/GALLERY/images (6).jfif" data-category="seminar" data-date="2025-03-10">
     <div class="card" style="background-image: url('assets/images/GALLERY/images (6).jfif');"></div>
   </a>
 
-  <a href="assets/images/GALLERY/images (7).jfif" data-category="fest">
+  <a href="assets/images/GALLERY/images (7).jfif" data-category="fest" data-date="2025-03-15">
     <div class="card" style="background-image: url('assets/images/GALLERY/images (7).jfif');"></div>
   </a>
 
-  <a href="assets/images/GALLERY/images (8).jfif" data-category="sports">
+  <a href="assets/images/GALLERY/images (8).jfif" data-category="sports" data-date="2025-04-01">
     <div class="card" style="background-image: url('assets/images/GALLERY/images (8).jfif');"></div>
   </a>
 
-  <a href="assets/images/GALLERY/images (9).jfif" data-category="sports">
+  <a href="assets/images/GALLERY/images (9).jfif" data-category="sports" data-date="2025-04-05">
     <div class="card" style="background-image: url('assets/images/GALLERY/images (9).jfif');"></div>
   </a>
+
+  <a href="assets/images/GALLERY/images (10).jfif" data-category="seminar" data-date="2025-04-10">
+    <div class="card" style="background-image: url('assets/images/GALLERY/images (10).jfif');"></div>
+  </a>
+
+  <a href="assets/images/GALLERY/images (11).jfif" data-category="seminar" data-date="2025-04-12">
+    <div class="card" style="background-image: url('assets/images/GALLERY/images (11).jfif');"></div>
+  </a>
+
+  <a href="assets/images/GALLERY/images (12).jfif" data-category="seminar" data-date="2025-04-15">
+    <div class="card" style="background-image: url('assets/images/GALLERY/images (12).jfif');"></div>
+  </a>
+
+  <a href="assets/images/GALLERY/images (14).jfif" data-category="fest" data-date="2025-05-01">
+    <div class="card" style="background-image: url('assets/images/GALLERY/images (14).jfif');"></div>
+  </a>
+
+  <a href="assets/images/GALLERY/images (15).jfif" data-category="sports" data-date="2025-05-05">
+    <div class="card" style="background-image: url('assets/images/GALLERY/images (15).jfif');"></div>
+  </a>
+
+  <a href="assets/images/GALLERY/images (16).jfif" data-category="sports" data-date="2025-05-10">
+    <div class="card" style="background-image: url('assets/images/GALLERY/images (16).jfif');"></div>
+  </a>
 </div>
+
 
 
 <!-- ====== Footer Start ====== -->

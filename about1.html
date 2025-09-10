@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusConnect</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS Animation CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/styling/navbar.css">
+  <style>
+   :root{
+  --bg:#ffffff; 
+  --card:#f9f9f9;
+  --text:#1a1a1a;
+  --muted:#555; 
+  --glass: rgba(0,0,0,0.04);
+  --glass-2: rgba(0,0,0,0.02);
+  color-scheme: light;
+}
+*{box-sizing:border-box; margin:0; padding:0;}  /* reset */
+
+/* Body fix */
+body{
+  /* font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; */
+  background: var(--bg);
+  color: var(--text);
+  line-height:1.6;
+  padding-top: 80px; /* space for navbar */
+}
+
+
+/* Container fix */
+.main-container{
+  max-width:1000px;
+  margin:40px auto;
+  text-align:center;
+  padding:0 24px;
+}
+
+/* Hero Section */
+.hero-img{
+  width:100%;
+  height:500px;
+  overflow:hidden;
+}
+.hero-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* Gallery under hero */
+.gallery{
+  margin:20px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:16px;
+  max-width:1000px;
+}
+.gallery img{
+  width:100%;
+  height:200px;
+  border-radius:12px;
+  object-fit:cover;
+  transition:all 0.3s ease;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+.gallery img:hover{
+  transform:scale(1.05);
+  box-shadow:0 6px 18px rgba(0,0,0,0.2);
+}
+
+/* Headings & Paragraphs only outside footer */
+.main-container h1,
+.gallery h1,
+.achievements h1,
+.cards h1 { 
+  font-size:36px;
+  margin-bottom:14px;
+  color: var(--text);
+}
+
+.main-container h2,
+.gallery h2,
+.achievements h2,
+.cards h2 {
+  font-size:26px;
+  margin-top:40px;
+  margin-bottom:14px;
+  color: var(--text);
+}
+
+.main-container p,
+.gallery p,
+.achievements p,
+.cards p {
+  color:var(--muted);
+  font-size:16px;
+}
+
+/* Achievements */
+.achievements{
+  margin-top:20px;
+  text-align:left;
+}
+.achievements ul{
+  list-style:none;
+  padding:0;
+  display:grid;
+  gap:10px;
+}
+.achievements li{
+  background:var(--card);
+  padding:12px;
+  border-radius:12px;
+  border:1px solid var(--glass-2);
+  transition:all 0.3s ease;
+  color: var(--text);
+}
+.achievements li:hover{
+  background:#f1f1f1;
+  transform:translateY(-3px);
+  box-shadow:0 6px 18px rgba(0,0,0,0.1);
+}
+
+/* Cards (events etc.) */
+.cards{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.cards .card{
+  background:var(--card);
+  padding:18px;
+  border-radius:14px;
+  text-align:left;
+  box-shadow:0 6px 18px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+.cards .card:hover{
+  background:#f1f1f1;
+  transform:translateY(-4px);
+  box-shadow:0 8px 22px rgba(0,0,0,0.2);
+}
+.cards .card h3{
+  margin-top:0;
+  margin-bottom:8px;
+  font-size:18px;
+  color: var(--text);
+}
+.cards .card p{
+  margin:0;
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* Typing effect for heading */
+.typing-text {
+    margin-top: 30px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #0a2540; /* Dark Blue */
+  border-right: 3px solid #007bff; /* Blinking cursor */
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 3.5s steps(30, end) forwards, blink 0.75s step-end infinite;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Cursor blink */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Paragraph under heading */
+.intro-para {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+}
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+     <div class="logo">
+  <a href="index.html" class="logo-link">
+    <img src="assets/images/logo.png" alt="CampusConnect Logo" class="logo-img">
+    <span class="logo-text">CampusConnect</span>
+  </a>
+</div>
+
+    <ul class="nav-links" id="nav-links"></ul>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+  <!-- Navbar End -->
+  <!-- Full width image -->
+  
+
+
+<section class="gallery-intro">
+  <h2 class="typing-text">About Us</h2>
+  <p class="intro-para">
+    Welcome to <b>Campus Connect</b> 📸 –At CampusConnect, we bring students, faculty, and alumni together by highlighting campus events, fests, and achievements. Our goal is to keep you updated, involved, and connected with every moment that shapes college life.
+  </p>
+</section>
+  <!-- Gallery -->
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop" alt="Gallery 1">
+    <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?q=80&w=600&auto=format&fit=crop" alt="Gallery 2">
+    <img src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?q=80&w=600&auto=format&fit=crop" alt="Gallery 3">
+  </div>
+    <h2>Achievements</h2>
+    <div class="achievements">
+      <ul>
+        <li><strong>Academic Excellence:</strong> Ranked among the top colleges affiliated with XYZ University.</li>
+        <li><strong>Technical Success:</strong> Winners at national hackathons & robotics championships.</li>
+        <li><strong>Cultural Recognition:</strong> Annual cultural fest draws participation across the region.</li>
+        <li><strong>Sports Victories:</strong> Champions in inter-college cricket and athletics.</li>
+        <li><strong>Research & Innovation:</strong> Faculty and students publish in reputed journals.</li>
+        <li><strong>Community Outreach:</strong> Active participation in social impact projects and drives.</li>
+        <li><strong>Global Exposure:</strong> Student exchange programs with international universities.</li>
+        <li><strong>Alumni Success:</strong> Graduates excelling in multinational companies worldwide.</li>
+        
+      </ul>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Technical Events</h3>
+        <p>Hackathon, TechFest, and Robotics Championship to promote innovation and creativity.</p>
+      </div>
+      <div class="card">
+        <h3>Cultural Events</h3>
+        <p>Music Night, Annual Day, and Dance Competitions that showcase student talents.</p>
+      </div>
+      <div class="card">
+        <h3>Sports Events</h3>
+        <p>Inter-college sports meets and tournaments to encourage teamwork and fitness.</p>
+      </div>
+     
+  </div>
+
+<!-- ====== Footer Start ====== -->
+<footer>
+  <div class="footer-container">
+    
+    <!-- Logo Section -->
+    <div class="footer-logo">
+      <img src="assets/images/logo.png" alt="CampusConnect Logo" class="footer-img">
+      <h2 class="footer-title">CampusConnect</h2>
+      <p>Stay Updated, Stay Involved</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Links -->
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <p class="social-text">Stay connected with our latest events and updates.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 CampusConnect. All Rights Reserved.</p>
+  </div>
+</footer>
+<!-- ====== Footer End ====== -->
+
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Bootstrap JS (with Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS Animation JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- Custom JS -->
+  <script src="assets/JS/navbar.js"></script>
+</body>
+</html>
+ 
