@@ -47,7 +47,7 @@ body {
   --shadow-color: rgba(255, 215, 0, 0.25);
 
   background-clip: padding-box;
-  background-image: url("your-image.jpg"); /* Replace image */
+  background-image: url("your-image.jpg"); 
   background-position-y: var(--bg-pos-y);
   background-repeat: no-repeat;
   background-size: cover;
@@ -181,10 +181,10 @@ body {
 }
 
 .gallery-filters select {
-  padding: 10px 16px;
+  padding: 14px 19px;
   font-size: 16px;
-  border: 2px solid #1e90ff;   /* red accent */
-  border-radius: 30px;         /* rounded look */
+  border: 2px solid #1e90ff;   
+  border-radius: 30px;         
   background-color: #fff;
   color: #1e90ff;
   font-weight: 500;
