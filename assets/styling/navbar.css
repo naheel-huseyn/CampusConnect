@@ -1,0 +1,228 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Navbar container */
+nav {
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;              
+  height: 70px;                    
+  padding: 0 40px;               
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo container */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none; 
+}
+
+/* Logo image */
+.logo-img {
+  height: 50px;  
+  display: block;
+}
+
+/* Logo text */
+.logo-text {
+  font-size: 22px;
+  font-weight: bold;
+  color: #0a2540; 
+  letter-spacing: 1px;
+  line-height: 1; 
+}
+
+/* Navbar links */
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  align-items: center;   
+  height: 100%;         
+  margin: 0;
+}
+
+/* Each link */
+.nav-links li a {
+  display: flex;         
+  align-items: center;    
+  height: 70px;           
+  text-decoration: none;
+  color: #0a2540;        
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0 12px;        
+  border-radius: 5px;
+}
+
+.nav-links li a:hover {
+  background: #0a2540;
+  color: #ffffff; 
+}
+
+/* Hamburger menu (mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: #0a2540;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: -100%;
+    background: #ffffff;
+    flex-direction: column;
+    width: 200px;
+    height: 100vh;
+    align-items: center;
+    justify-content: start;
+    padding-top: 30px;
+    transition: right 0.4s ease;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links li a {
+    height: auto;       
+    padding: 12px 0;     
+  }
+}
+footer {
+  background: #0a2540; /* Navy Blue */
+  color: #ffffff;
+  padding: 40px 20px 20px;
+  margin-top: 40px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 30px;
+}
+
+.footer-logo {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-img {
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.footer-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 5px 0;
+  color: #ffffff;
+}
+
+.footer-links {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-links h3,
+.footer-social h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin: 6px 0;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: #ff7f32; /* Orange hover */
+}
+
+.footer-social {
+  flex: 1;
+  min-width: 200px;
+}
+
+.social-text {
+  font-size: 14px;
+  color: #ccc;
+  margin: 5px 0 12px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ff7f32;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 20px;
+  padding-top: 10px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .footer-links ul {
+    padding: 0;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+}
+
