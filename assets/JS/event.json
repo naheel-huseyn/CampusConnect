@@ -1,0 +1,104 @@
+[
+  {
+    "id": "event1",
+    "title": "Tech Fest 2025",
+    "shortDescription": "Showcasing innovation and projects.",
+    "description": "A grand festival of technology...",
+    "image": "assets/images/tech.jpg",
+    "banner": "assets/images/events/techfest-banner.jpg",
+    "date": "March 12, 2025",
+    "time": "10:00 AM",
+    "venue": "Main Auditorium",
+    "icon": "fas fa-microchip",
+    "organizer": {
+      "name": "Ali Raza",
+      "email": "ali.raza@college.edu",
+      "phone": "+92-300-1234567"
+    }
+  },
+  {
+    "id": "event2",
+    "title": "Cultural Night",
+    "shortDescription": "An evening of music and dance.",
+    "description": "Experience the diversity...",
+    "image": "assets/images/culture.jpg",
+    "banner": "assets/images/events/cultural-banner.jpg",
+    "date": "April 5, 2025",
+    "time": "6:00 PM",
+    "venue": "Open Air Theatre",
+    "icon": "fas fa-theater-masks",
+    "organizer": {
+      "name": "Sarah Khan",
+      "email": "sarah.khan@college.edu",
+      "phone": "+92-301-7654321"
+    }
+  },
+  {
+    "id": "event3",
+    "title": "Sports Week",
+    "shortDescription": "Competitions across sports.",
+    "description": "Get ready for adrenaline...",
+    "image": "assets/images/sport.jpg",
+    "banner": "assets/images/events/sports-banner.jpg",
+    "date": "May 2-7, 2025",
+    "time": "All Day",
+    "venue": "Sports Complex",
+    "icon": "fas fa-football-ball",
+    "organizer": {
+      "name": "Hina Malik",
+      "email": "hina.malik@college.edu",
+      "phone": "+92-302-5556677"
+    }
+  },
+  {
+    "id": "event4",
+    "title": "Literary Fest",
+    "shortDescription": "Poetry, prose and debate.",
+    "description": "A celebration of literature...",
+    "image": "assets/images/fest.jpg",
+    "banner": "assets/images/events/literary-banner.jpg",
+    "date": "June 15, 2025",
+    "time": "11:00 AM",
+    "venue": "Seminar Hall",
+    "icon": "fas fa-book-open",
+    "organizer": {
+      "name": "Wali Aurangzeb",
+      "email": "wali.aurangzeb@college.edu",
+      "phone": "+92-303-1234567"
+    }
+  },
+  {
+    "id": "event5",
+    "title": "Startup Expo",
+    "shortDescription": "Innovations meet investors.",
+    "description": "Pitch your ideas...",
+    "image": "assets/images/expo.jpg",
+    "banner": "assets/images/events/startup-banner.jpg",
+    "date": "July 22, 2025",
+    "time": "9:00 AM",
+    "venue": "Innovation Hub",
+    "icon": "fas fa-lightbulb",
+    "organizer": {
+      "name": "Mahir Ali",
+      "email": "mahir.ali@college.edu",
+      "phone": "+92-304-9876543"
+    }
+  },
+  {
+    "id": "event6",
+    "title": "Art & Design Show",
+    "shortDescription": "Creativity on display.",
+    "description": "From paintings to sculptures...",
+    "image": "assets/images/art.jpg",
+    "banner": "assets/images/events/art-banner.jpg",
+    "date": "August 10, 2025",
+    "time": "10:00 AM",
+    "venue": "Art Gallery",
+    "icon": "fas fa-palette",
+    "organizer": {
+      "name": "Selena Mazhar",
+      "email": "selena.mazhar@college.edu",
+      "phone": "+92-305-1112233"
+    }
+  }
+]

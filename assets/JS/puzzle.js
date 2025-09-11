@@ -27,7 +27,7 @@ function initPuzzle() {
     for (let col = 0; col < 3; col++) {
       let piece = document.createElement("div");
       piece.classList.add("piece");
-      piece.style.backgroundPosition = -${col * 100}px -${row * 100}px;
+      piece.style.backgroundPosition = `-${col * 100}px -${row * 100}px`;
       piece.setAttribute("data-pos", row + "-" + col);
       piece.draggable = true;
       pieces.push(piece);
@@ -76,5 +76,5 @@ scholarshipForm.addEventListener("submit", e => {
   let name = document.getElementById("name").value;
   let email = document.getElementById("email").value;
   formPopup.style.display = "none";
-  alert(Thankyou ${name}! 🎉 We will contact you soon at ${email}.);
+  alert(`Thank you ${name}! 🎉 We will contact you soon at ${email}.`);
 });

@@ -21,6 +21,29 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.gallery-intro {
+  background: #0a2540;   /* Navy Blue background */
+  padding: 30px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.gallery-intro h2 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.gallery-intro .intro-para {
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+
 .title {
   text-align: center;
   font-size: 2.5rem;

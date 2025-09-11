@@ -6,6 +6,26 @@
   margin: 50px 0;
 }
 
+/* Heading & Tagline */
+.puzzle-intro {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  color: #0a2540;
+}
+
+.puzzle-intro h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.puzzle-intro p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+
 /* Scholarship Button */
 .btn-scholarship {
   padding: 12px 25px;
@@ -16,7 +36,6 @@
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
-  text-decoration: none;
 }
 .btn-scholarship:hover {
   background: #0a2540;
@@ -55,21 +74,14 @@
 /* Puzzle Grid (exact 3x3 = 300px box) */
 .puzzle {
   display: grid;
-  grid-template-columns: repeat(3, 100px); /* 3 columns */
-  grid-template-rows: repeat(3, 100px);    /* 3 rows */
-  gap: 0;                                  /* no gap between pieces */
-  width: 300px;                            /* fixed total width */
-  height: 300px;                           /* fixed total height */
+  grid-template-columns: repeat(3, 100px); 
+  grid-template-rows: repeat(3, 100px);    
+  gap: 0;                                 
+  width: 300px;                           
+  height: 300px;                      
   margin: 20px auto;
   border: 3px solid #0a2540;
   box-sizing: content-box;
-}
-.puzzle-intro{
-    text-align: center;
-    margin-top: 15px;
-}
-.puzzle-intro h2{
-    font-weight: bold;
 }
 
 /* Puzzle pieces */

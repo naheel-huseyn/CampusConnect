@@ -1,4 +1,4 @@
-/* Gallery under hero */
+
 .gallery{
   margin:20px auto;
   display:grid;
@@ -38,6 +38,47 @@
   margin-bottom:14px;
   color: var(--text);
 }
+.gallery-intro {
+  background: #0a2540;   /* Navy Blue background */
+  padding: 25px 20px;
+  text-align: center;
+}
+
+.gallery-intro h2 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.gallery-intro .intro-para {
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.page-heading {
+  background: #f9f9f9; /* light grey background to contrast navy */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.page-heading h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0a2540; /* navy theme */
+  margin-bottom: 15px;
+}
+
+.page-heading p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 
 .main-container p,
 .gallery p,
