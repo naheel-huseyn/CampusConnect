@@ -19,21 +19,17 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/styling/navbar.css">
-  <style>
+    <style>
     :root{
-      --bg:#0f1724; 
-      --card:#0b1220;
-      --muted:#94a3b8;
-      --glass: rgba(255,255,255,0.04);
-      --glass-2: rgba(255,255,255,0.02);
-      color-scheme: dark;
+      --muted:#555;
+      --footer-bg:#081329; /* Footer کا اصل کلر یہاں define */
     }
     *{box-sizing:border-box}
     body{
       margin:0;
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-      background: var(--bg);
-      color:#e6eef8;
+      background: #fff; /* پورا پیج وائٹ */
+      color:#000;
       line-height:1.6;
     }
     .container{
@@ -68,15 +64,15 @@
       border-radius:12px;
       object-fit:cover;
       transition:all 0.3s ease;
-      box-shadow:0 4px 12px rgba(0,0,0,0.4);
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);
     }
     .gallery img:hover{
       transform:scale(1.05);
-      box-shadow:0 6px 18px rgba(0,0,0,0.6);
+      box-shadow:0 6px 18px rgba(0,0,0,0.3);
     }
     h1{font-size:36px;margin-bottom:14px}
     h2{font-size:26px;margin-top:40px;margin-bottom:14px}
-    p{color:#cbd5e1;font-size:16px}
+    p{color:#333;font-size:16px}
     /* Achievements */
     .achievements{margin-top:20px;text-align:left}
     .achievements ul{
@@ -86,17 +82,27 @@
       gap:10px;
     }
     .achievements li{
-      background:var(--card);
+      background:#f7f7f7;
       padding:12px;
       border-radius:12px;
-      border:1px solid var(--glass-2);
+      border:1px solid #ddd;
       transition:all 0.3s ease;
     }
-    .achievements li:hover{
-      background:var(--glass);
-      transform:translateY(-3px);
-      box-shadow:0 6px 18px rgba(0,0,0,0.4);
-    }
+   /* Achievements */
+.achievements li {
+  background: #fff;         /* normal white background */
+  color: #000;              /* normal black text */
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.achievements li:hover {
+  background: var(--footer-bg); /* Footer کا کلر */
+  color: #fff;                  /* text white */
+  transform: translateY(-3px);
+}
     /* Cards (events etc.) */
     .cards{
       margin-top:40px;
@@ -104,21 +110,24 @@
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
       gap:20px;
     }
-    .card{
-      background:var(--card);
-      padding:18px;
-      border-radius:14px;
-      text-align:left;
-      box-shadow:0 6px 18px rgba(0,0,0,0.4);
-      transition: all 0.3s ease;
-    }
-    .card:hover{
-      background:var(--glass);
-      transform:translateY(-4px);
-      box-shadow:0 8px 22px rgba(0,0,0,0.5);
-    }
+    /* Cards */
+.card {
+  background: #fff;      /* normal white */
+  color: #000;           /* normal black text */
+  padding: 18px;
+  border-radius: 14px;
+  text-align: left;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+.card:hover {
+  background: var(--footer-bg); /* Footer کا کلر */
+  color: #fff;                  /* text white */
+  transform: translateY(-4px);
+}
     .card h3{margin-top:0;margin-bottom:8px;font-size:18px}
     .card p{margin:0;font-size:14px;color:var(--muted)}
+    .card:hover p{color:#fff}
   </style>
 </head>
 <body>
@@ -140,10 +149,7 @@
     </div>
   </nav>
   <!-- Navbar End -->
-  <!-- Full width image -->
-  
-
-  <!-- Gallery -->
+     <!-- Gallery -->
   <div class="gallery">
     <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop" alt="Gallery 1">
     <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?q=80&w=600&auto=format&fit=crop" alt="Gallery 2">
@@ -151,15 +157,26 @@
   </div>
 
   <div class="container">
-    <h1>About Our College</h1>
+   <h1 style="font-size: 48px; font-weight: 700; margin-bottom: 14px; color: #000;">
+  About Our College
+</h1>
 
     <h2>Introduction</h2>
-    <p>Campus Connect college of Engineering, located in Karachi and affiliated with XYZ University, is a premier institution that combines academic excellence with holistic student development. Established in 1998, the college offers a range of undergraduate and postgraduate programs with modern facilities, dedicated faculty, and vibrant student communities.</p>
+    <p>
+     <strong> CampusConnect College of Engineering,</strong> located in Karachi and affiliated with <strong>University of Karachi</strong>, 
+      has been a hub of innovation and academic excellence since 1998. The college offers diverse 
+      undergraduate and postgraduate programs in engineering, technology, and applied sciences. 
+      With highly qualified faculty, modern laboratories, and industry-focused curricula, students 
+      gain both theoretical knowledge and practical exposure. The vibrant campus life encourages 
+      participation in cultural, technical, and sports events, ensuring all-round development. 
+      Our strong alumni network and international collaborations provide global opportunities for 
+      students to excel and build successful careers.
+    </p>
 
     <h2>Achievements</h2>
     <div class="achievements">
       <ul>
-        <li><strong>Academic Excellence:</strong> Ranked among the top colleges affiliated with XYZ University.</li>
+        <li><strong>Academic Excellence:</strong> Ranked among the top colleges affiliated with University of Karachi.</li>
         <li><strong>Technical Success:</strong> Winners at national hackathons & robotics championships.</li>
         <li><strong>Cultural Recognition:</strong> Annual cultural fest draws participation across the region.</li>
         <li><strong>Sports Victories:</strong> Champions in inter-college cricket and athletics.</li>
@@ -167,7 +184,6 @@
         <li><strong>Community Outreach:</strong> Active participation in social impact projects and drives.</li>
         <li><strong>Global Exposure:</strong> Student exchange programs with international universities.</li>
         <li><strong>Alumni Success:</strong> Graduates excelling in multinational companies worldwide.</li>
-        
       </ul>
     </div>
 
@@ -184,7 +200,7 @@
         <h3>Sports Events</h3>
         <p>Inter-college sports meets and tournaments to encourage teamwork and fitness.</p>
       </div>
-     
+    </div>
   </div>
    <!-- ====== Footer Start ====== -->
 <footer>
