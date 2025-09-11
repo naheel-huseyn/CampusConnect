@@ -1,25 +1,39 @@
-document.getElementById("monthFilter").addEventListener("change", function () {
-  const selectedMonth = this.value;
-  const cards = document.querySelectorAll("#lightgallery a");
+// Category filter buttons
+const filterBtns = document.querySelectorAll(".filter-btn");
+let selectedCategory = "all"; // default category
+let selectedMonth = "all";    // default month
 
+// Add click event to category buttons
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", function () {
+    filterBtns.forEach(b => b.classList.remove("active"));
+    this.classList.add("active");
+    selectedCategory = this.getAttribute("data-filter");
+    filterCards();
+  });
+});
+
+// Month dropdown filter
+document.getElementById("monthFilter").addEventListener("change", function () {
+  selectedMonth = this.value;
+  filterCards();
+});
+
+// Function to filter cards based on both category and month
+function filterCards() {
+  const cards = document.querySelectorAll("#lightgallery a");
   cards.forEach(card => {
-    const date = card.getAttribute("data-date"); // e.g. 2025-03-10
-    if (selectedMonth === "all" || date.startsWith(selectedMonth)) {
+    const cardCategory = card.getAttribute("data-category");
+    const cardDate = card.getAttribute("data-date");
+
+    // Check both filters
+    const categoryMatch = selectedCategory === "all" || cardCategory === selectedCategory;
+    const monthMatch = selectedMonth === "all" || cardDate.startsWith(selectedMonth);
+
+    if (categoryMatch && monthMatch) {
       card.style.display = "block";
     } else {
       card.style.display = "none";
     }
   });
-});
-
-// ===== LightGallery Init =====
-document.addEventListener("DOMContentLoaded", function () {
-  lightGallery(document.getElementById("lightgallery"), {
-    plugins: [lgZoom, lgFullscreen, lgAutoplay],
-    speed: 500,
-    download: false,
-    zoom: true,
-    fullscreen: true,
-    autoplay: true
-  });
-});
+}
