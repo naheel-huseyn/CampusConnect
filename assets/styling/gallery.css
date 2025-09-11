@@ -102,7 +102,7 @@ body {
 .filter-btn {
   position: relative;
   overflow: hidden;
-  background: #1e90ff;
+  background: #0a2540;
   color: #fff;
   padding: 12px 22px;
   margin: 5px;
@@ -183,10 +183,10 @@ body {
 .gallery-filters select {
   padding: 14px 19px;
   font-size: 16px;
-  border: 2px solid #1e90ff;   
+  border: 2px solid #0a2540;   
   border-radius: 30px;         
   background-color: #fff;
-  color: #1e90ff;
+  color: #0a2540;
   font-weight: 500;
   outline: none;
   transition: all 0.3s ease;

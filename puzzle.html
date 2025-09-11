@@ -11,13 +11,20 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      background: #f9f9f9;
+      background: #f0f4f8;
       font-family: Arial, sans-serif;
     }
 
     h2 {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       color: #0a2540;
+      text-align: center;
+    }
+
+    .timer {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #ff0000;
     }
 
     .puzzle {
@@ -26,86 +33,189 @@
       grid-template-rows: repeat(3, 100px);
       gap: 2px;
       border: 3px solid #0a2540;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
     .piece {
       width: 100px;
       height: 100px;
-      background-image: url("assets/images/logo.png"); /* apka logo */
+      background-image: url("assets/images/logo.png");
       background-size: 300px 300px;
       cursor: grab;
       border: 1px solid #ccc;
+      transition: transform 0.2s;
+    }
+
+    .piece:active {
+      transform: scale(1.05);
     }
 
     .completed {
-      margin-top: 20px;
       font-size: 18px;
       color: green;
       font-weight: bold;
       display: none;
+      margin-bottom: 20px;
+    }
+
+    /* Popup Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 350px;
+      width: 90%;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      animation: popup 0.3s ease;
+    }
+
+    @keyframes popup {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-content h3 {
+      margin-bottom: 15px;
+      color: #0a2540;
+    }
+
+    .modal-content input {
+      width: 80%;
+      padding: 10px;
+      margin: 8px 0;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .modal-content button {
+      margin-top: 12px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #0a2540;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .modal-content button:hover {
+      background-color: #163e7c;
     }
   </style>
 </head>
 <body>
 
-  <h2>Solve the Puzzle to Unlock 20% Scholarship 🎓</h2>
+  <h2>Solve the Puzzle to Unlock <span style="color: #ff6f00;">20% Scholarship 🎓</span></h2>
+  <div class="timer" id="timer">Time Left: 03:00</div>
   <div class="puzzle" id="puzzle"></div>
-  <div class="completed" id="completed">
-    🎉 Congratulations! You unlocked <b>20% Scholarship Reward</b>!
+  <div class="completed" id="completed"></div>
+
+  <!-- Modal Form -->
+  <div class="modal" id="modalForm">
+    <div class="modal-content">
+      <h3>🎉 Congratulations! 🎉</h3>
+      <p>You unlocked <b>20% Scholarship</b>! Please fill in your details and we will contact you soon.</p>
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="tel" id="phone" placeholder="Phone Number" required>
+      <button id="submitBtn">Submit</button>
+    </div>
   </div>
 
   <script>
-    const puzzle = document.getElementById("puzzle");
-    const completedMsg = document.getElementById("completed");
+const puzzle = document.getElementById("puzzle");
+const completedMsg = document.getElementById("completed");
+const modalForm = document.getElementById("modalForm");
+const timerEl = document.getElementById("timer");
 
-    let pieces = [];
-    for (let row = 0; row < 3; row++) {
-      for (let col = 0; col < 3; col++) {
-        let piece = document.createElement("div");
-        piece.classList.add("piece");
-        piece.style.backgroundPosition = `-${col * 100}px -${row * 100}px`;
-        piece.setAttribute("data-pos", row + "-" + col);
-        piece.draggable = true;
-        pieces.push(piece);
-      }
+if(localStorage.getItem("puzzleSolved")) {
+  // User already solved puzzle
+  puzzle.style.display = "none";
+  timerEl.style.display = "none";
+  completedMsg.style.display = "block";
+  completedMsg.innerHTML = "✅ You have already solved the puzzle. Thank you!";
+} else {
+  // Puzzle setup for first-time user
+  let pieces = [];
+  for (let row = 0; row < 3; row++) {
+    for (let col = 0; col < 3; col++) {
+      let piece = document.createElement("div");
+      piece.classList.add("piece");
+      piece.style.backgroundPosition = `-${col * 100}px -${row * 100}px`;
+      piece.setAttribute("data-pos", row + "-" + col);
+      piece.draggable = true;
+      pieces.push(piece);
     }
+  }
 
-    // Shuffle
-    pieces.sort(() => Math.random() - 0.5);
-    pieces.forEach(piece => puzzle.appendChild(piece));
+  pieces.sort(() => Math.random() - 0.5);
+  pieces.forEach(piece => puzzle.appendChild(piece));
 
-    let dragged;
+  let dragged;
 
-    puzzle.addEventListener("dragstart", e => {
-      dragged = e.target;
-    });
+  puzzle.addEventListener("dragstart", e => {
+    dragged = e.target;
+  });
 
-    puzzle.addEventListener("dragover", e => {
-      e.preventDefault();
-    });
+  puzzle.addEventListener("dragover", e => e.preventDefault());
 
-    puzzle.addEventListener("drop", e => {
-      if (e.target.classList.contains("piece")) {
-        let temp = document.createElement("div");
-        puzzle.replaceChild(temp, dragged);
-        puzzle.replaceChild(dragged, e.target);
-        puzzle.replaceChild(e.target, temp);
-        checkSolved();
-      }
-    });
-
-    function checkSolved() {
-      const current = [...puzzle.children];
-      let solved = current.every((piece, index) => {
-        let row = Math.floor(index / 3);
-        let col = index % 3;
-        return piece.getAttribute("data-pos") === row + "-" + col;
-      });
-
-      if (solved) {
-        completedMsg.style.display = "block";
-      }
+  puzzle.addEventListener("drop", e => {
+    if (e.target.classList.contains("piece")) {
+      let temp = document.createElement("div");
+      puzzle.replaceChild(temp, dragged);
+      puzzle.replaceChild(dragged, e.target);
+      puzzle.replaceChild(e.target, temp);
+      checkSolved();
     }
-  </script>
+  });
+
+  function checkSolved() {
+    const current = [...puzzle.children];
+    let solved = current.every((piece, index) => {
+      let row = Math.floor(index / 3);
+      let col = index % 3;
+      return piece.getAttribute("data-pos") === row + "-" + col;
+    });
+
+    if (solved) {
+      completedMsg.style.display = "block";
+      completedMsg.innerHTML = "🎉 Congratulations! You unlocked 20% Scholarship!";
+      localStorage.setItem("puzzleSolved", true);
+      puzzle.style.pointerEvents = "none";
+      clearInterval(timerInterval);
+      modalForm.style.display = "flex";
+    }
+  }
+
+  // Timer (3 minutes)
+  let time = 180;
+  const timerInterval = setInterval(() => {
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    timerEl.textContent = `Time Left: ${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+    time--;
+    if(time < 0) {
+      clearInterval(timerInterval);
+      alert("⏰ Time's up! Try again later.");
+      puzzle.style.display = "none";
+    }
+  }, 1000);
+}
+</script>
+
 </body>
 </html>
