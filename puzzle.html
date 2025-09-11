@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puzzle Scholarship</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #f9f9f9;
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #0a2540;
+    }
+
+    .puzzle {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+      gap: 2px;
+      border: 3px solid #0a2540;
+    }
+
+    .piece {
+      width: 100px;
+      height: 100px;
+      background-image: url("assets/images/logo.png"); /* apka logo */
+      background-size: 300px 300px;
+      cursor: grab;
+      border: 1px solid #ccc;
+    }
+
+    .completed {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Solve the Puzzle to Unlock 20% Scholarship 🎓</h2>
+  <div class="puzzle" id="puzzle"></div>
+  <div class="completed" id="completed">
+    🎉 Congratulations! You unlocked <b>20% Scholarship Reward</b>!
+  </div>
+
+  <script>
+    const puzzle = document.getElementById("puzzle");
+    const completedMsg = document.getElementById("completed");
+
+    let pieces = [];
+    for (let row = 0; row < 3; row++) {
+      for (let col = 0; col < 3; col++) {
+        let piece = document.createElement("div");
+        piece.classList.add("piece");
+        piece.style.backgroundPosition = `-${col * 100}px -${row * 100}px`;
+        piece.setAttribute("data-pos", row + "-" + col);
+        piece.draggable = true;
+        pieces.push(piece);
+      }
+    }
+
+    // Shuffle
+    pieces.sort(() => Math.random() - 0.5);
+    pieces.forEach(piece => puzzle.appendChild(piece));
+
+    let dragged;
+
+    puzzle.addEventListener("dragstart", e => {
+      dragged = e.target;
+    });
+
+    puzzle.addEventListener("dragover", e => {
+      e.preventDefault();
+    });
+
+    puzzle.addEventListener("drop", e => {
+      if (e.target.classList.contains("piece")) {
+        let temp = document.createElement("div");
+        puzzle.replaceChild(temp, dragged);
+        puzzle.replaceChild(dragged, e.target);
+        puzzle.replaceChild(e.target, temp);
+        checkSolved();
+      }
+    });
+
+    function checkSolved() {
+      const current = [...puzzle.children];
+      let solved = current.every((piece, index) => {
+        let row = Math.floor(index / 3);
+        let col = index % 3;
+        return piece.getAttribute("data-pos") === row + "-" + col;
+      });
+
+      if (solved) {
+        completedMsg.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
