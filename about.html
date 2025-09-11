@@ -19,139 +19,8 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/styling/navbar.css">
-  <style>
-    :root {
-      --bg: #0f1724; 
-      --card: #0b1220;
-      --muted: #94a3b8;
-      --glass: rgba(255,255,255,0.04);
-      --glass-2: rgba(255,255,255,0.02);
-      color-scheme: dark;
-    }
+  <link rel="stylesheet" href="assets/styling/about.css">
 
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: var(--bg);
-      color: #e6eef8;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 100px auto 40px;
-      text-align: center;
-      padding: 0 24px;
-    }
-
-    /* Full-width hero image */
-    .hero-img {
-      width: 100%;
-      height: 500px;
-      overflow: hidden;
-    }
-    .hero-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* Gallery */
-    .gallery {
-      margin: 20px auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-      max-width: 1000px;
-    }
-    .gallery img {
-      width: 100%;
-      height: 200px;
-      border-radius: 12px;
-      object-fit: cover;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
-    }
-
-    h1 { font-size: 36px; margin-bottom: 14px; }
-    h2 { font-size: 26px; margin-top: 40px; margin-bottom: 14px; }
-    p  { color: #cbd5e1; font-size: 16px; }
-
-    /* Achievements (list style) */
-    .achievements {
-      margin-top: 20px;
-      text-align: left;
-    }
-    .achievements ul {
-      list-style: none;
-      padding: 0;
-      display: grid;
-      gap: 10px;
-    }
-    .achievements li {
-      background: var(--card);
-      padding: 12px;
-      border-radius: 12px;
-      border: 1px solid var(--glass-2);
-      transition: all 0.3s ease;
-    }
-    .achievements li:hover {
-      background: var(--glass);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-    }
-
-    /* Achievements Section (cards) */
-    .achievements-section .achievement-card {
-      background: var(--card);
-      padding: 20px;
-      border-radius: 14px;
-      text-align: center;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-      transition: all 0.3s ease;
-    }
-    .achievements-section .achievement-card:hover {
-      background: var(--glass);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 22px rgba(0,0,0,0.5);
-    }
-    .achievement-card i {
-      font-size: 32px;
-      margin-bottom: 12px;
-      color: #facc15;
-    }
-    .achievement-card h3 { font-size: 18px; margin: 10px 0; }
-    .achievement-card p  { font-size: 14px; color: var(--muted); }
-
-    /* Team Cards */
-    .team-card {
-      background: var(--card);
-      padding: 16px;
-      border-radius: 14px;
-      text-align: center;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-      transition: all 0.3s ease;
-    }
-    .team-card img {
-      width: 100%;
-      height: 250px;
-      border-radius: 12px;
-      object-fit: cover;
-      margin-bottom: 12px;
-    }
-    .team-card:hover {
-      background: var(--glass);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 22px rgba(0,0,0,0.5);
-    }
-  </style>
 </head>
 <body>
 
@@ -170,99 +39,128 @@
   </nav>
   <!-- Navbar End -->
 
-  <!-- Gallery -->
+
+<section class="gallery-intro">
+  <h2 class="typing-text">About Us</h2>
+  <p class="intro-para">
+    Welcome to <b>Campus Connect</b> 📸 – At CampusConnect, we bring students, faculty, and alumni together by highlighting campus events, fests, and achievements. Our goal is to keep you updated, involved, and connected with every moment that shapes college life.
+  </p>
+</section>
+        <!-- Gallery -->
   <div class="gallery">
-    <img src="assets/images/about/about1.jpg" alt="Gallery 1">
-    <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?q=80&w=600&auto=format&fit=crop" alt="Gallery 2">
-    <img src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?q=80&w=600&auto=format&fit=crop" alt="Gallery 3">
+    <img src="assets/images/about/about2.jpg" alt="Gallery 1">
+    <img src="assets/images/about/about1.jpg" alt="Gallery 2">
+    <img src="assets/images/about/about3.jpg" alt="Gallery 3">
   </div>
 
-  <!-- Mission & Vision Section -->
-  <section class="mission-section">
-    <div class="container">
-      <h1>About Our College</h1>
+      <!-- Achievements Section -->
+<section class="achievements" id="achievements">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Our Achievements</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+      We take pride in celebrating milestones that inspire our students and strengthen our campus community.
+    </p>
 
-      <h2>Introduction</h2>
-      <p>Campus Connect college of Engineering, located in Karachi and affiliated with XYZ University, is a premier institution that combines academic excellence with holistic student development. Established in 1998, the college offers a range of undergraduate and postgraduate programs with modern facilities, dedicated faculty, and vibrant student communities.</p>
-
-      <h2>Achievements</h2>
-      <div class="achievements">
-        <ul>
-          <li><strong>Academic Excellence:</strong> Ranked among the top colleges affiliated with XYZ University.</li>
-          <li><strong>Technical Success:</strong> Winners at national hackathons & robotics championships.</li>
-          <li><strong>Cultural Recognition:</strong> Annual cultural fest draws participation across the region.</li>
-          <li><strong>Sports Victories:</strong> Champions in inter-college cricket and athletics.</li>
-          <li><strong>Research & Innovation:</strong> Faculty and students publish in reputed journals.</li>
-          <li><strong>Community Outreach:</strong> Active participation in social impact projects and drives.</li>
-          <li><strong>Global Exposure:</strong> Student exchange programs with international universities.</li>
-          <li><strong>Alumni Success:</strong> Graduates excelling in multinational companies worldwide.</li>
-        </ul>
+    <div class="row mt-4">
+      <div class="col-md-4 col-sm-6" data-aos="zoom-in">
+        <div class="achievement-card">
+          <i class="fas fa-trophy"></i>
+          <h3>National Awards</h3>
+          <p>Our students have won multiple national-level competitions and hackathons.</p>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Achievements Section -->
-  <section class="achievements-section" id="achievements">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Our Achievements</h2>
-      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
-        We take pride in celebrating milestones that inspire our students and strengthen our campus community.
-      </p>
-
-      <div class="row mt-4">
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in">
-          <div class="achievement-card">
-            <i class="fas fa-trophy"></i>
-            <h3>National Awards</h3>
-            <p>Our students have won multiple national-level competitions and hackathons.</p>
-          </div>
+      <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
+        <div class="achievement-card">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Academic Excellence</h3>
+          <p>Consistently producing university toppers and scholarship holders every year.</p>
         </div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
-          <div class="achievement-card">
-            <i class="fas fa-graduation-cap"></i>
-            <h3>Academic Excellence</h3>
-            <p>Consistently producing university toppers and scholarship holders every year.</p>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="400">
-          <div class="achievement-card">
-            <i class="fas fa-handshake"></i>
-            <h3>Industry Collaboration</h3>
-            <p>Strong partnerships with leading companies for internships and training.</p>
-          </div>
+      </div>
+      <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="400">
+        <div class="achievement-card">
+          <i class="fas fa-handshake"></i>
+          <h3>Industry Collaboration</h3>
+          <p>Strong partnerships with leading companies for internships and training.</p>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Meet Our Team Section -->
-  <section class="team" id="team">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Meet Our Staff</h2>
-      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
-        The passionate people behind <b>CampusConnect</b> who make every event and initiative possible.
-      </p>
-
-      <div class="row mt-4">
-        <!-- Team Member 1 -->
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in">
-          <div class="team-card">
-            <img src="assets/images/about/pic1.jpg" alt="Team Member 1">
-            <h3>Sarah Khan</h3>
-            <p>Event Coordinator</p>
-          </div>
+  </div>
+</section>
+<!-- Why Choose Us Section -->
+<section class="why-choose">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up"> Why Choose CampusConnect?</h2>
+    <div class="row">
+      <div class="col-md-3 col-sm-6" data-aos="flip-left">
+        <div class="choose-card">
+          <i class="fas fa-calendar-check"></i>
+          <h3>Event Updates</h3>
+          <p>Stay informed about every fest, seminar, and workshop happening on campus.</p>
         </div>
-        <!-- Team Member 2 -->
-        <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
-          <div class="team-card">
-            <img src="assets/images/about/pic3.jpg" alt="Team Member 2">
-            <h3>Ali Raza</h3>
-            <p>College Head</p>
-          </div>
+      </div>
+      <div class="col-md-3 col-sm-6" data-aos="flip-left" data-aos-delay="200">
+        <div class="choose-card">
+          <i class="fas fa-camera-retro"></i>
+          <h3>Photo Gallery</h3>
+          <p>Relive moments with a vibrant collection of campus memories and highlights.</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6" data-aos="flip-left" data-aos-delay="400">
+        <div class="choose-card">
+          <i class="fas fa-users"></i>
+          <h3>Community</h3>
+          <p>Bringing students, faculty, and alumni together in one interactive hub.</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6" data-aos="flip-left" data-aos-delay="600">
+        <div class="choose-card">
+          <i class="fas fa-star"></i>
+          <h3>Highlights</h3>
+          <p>Celebrate achievements, talents, and the true spirit of college life.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Meet Our Team Section -->
+<section class="team" id="team">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Meet Our Team</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+      The passionate people behind <b>CampusConnect</b> who make every event and initiative possible.
+    </p>
+
+    <div class="row mt-4">
+      <!-- Team Member 1 -->
+      <div class="col-md-4 col-sm-6" data-aos="zoom-in">
+        <div class="team-card">
+          <img src="assets/images/about/pic1.jpg" alt="Team Member 1">
+          <h3>Sarah Khan</h3>
+          <p>Event Coordinator</p>
+        </div>
+      </div>
+
+      <!-- Team Member 2 -->
+      <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
+        <div class="team-card">
+          <img src="assets/images/about/pic3.jpg" alt="Team Member 2">
+          <h3>Ali Raza</h3>
+          <p>Technical Head</p>
+        </div>
+      </div>
+
+      <!-- Team Member 3 -->
+      <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="400">
+        <div class="team-card">
+          <img src="assets/images/about/pic2.jpg" alt="Team Member 3">
+          <h3>Hina Malik</h3>
+          <p>Creative Designer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
