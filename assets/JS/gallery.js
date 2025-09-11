@@ -1,22 +1,25 @@
-// Filter functionality
-const filterBtns = document.querySelectorAll(".filter-btn");
-const cards = document.querySelectorAll(".card__container a");
+document.getElementById("monthFilter").addEventListener("change", function () {
+  const selectedMonth = this.value;
+  const cards = document.querySelectorAll("#lightgallery a");
 
-filterBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    // Active class change
-    filterBtns.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
+  cards.forEach(card => {
+    const date = card.getAttribute("data-date"); // e.g. 2025-03-10
+    if (selectedMonth === "all" || date.startsWith(selectedMonth)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
 
-    const filter = btn.getAttribute("data-filter");
-
-    cards.forEach(card => {
-      const category = card.querySelector(".card").getAttribute("data-category");
-      if (filter === "all" || category === filter) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
-      }
-    });
+// ===== LightGallery Init =====
+document.addEventListener("DOMContentLoaded", function () {
+  lightGallery(document.getElementById("lightgallery"), {
+    plugins: [lgZoom, lgFullscreen, lgAutoplay],
+    speed: 500,
+    download: false,
+    zoom: true,
+    fullscreen: true,
+    autoplay: true
   });
 });
