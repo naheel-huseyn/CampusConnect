@@ -19,6 +19,7 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/styling/navbar.css">
+  <link rel="stylesheet" href="assets/styling/feedback.css">
 </head>
 <body>
 
@@ -39,6 +40,77 @@
     </div>
   </nav>
   <!-- Navbar End -->
+
+    <!-- Hero Section -->
+  <section class="feedback-hero">
+    <div class="hero-overlay">
+      <h1 data-aos="fade-down">We Value Your Feedback</h1>
+      <p data-aos="fade-up">Help us improve and make CampusConnect even better!</p>
+    </div>
+  </section>
+
+  <!-- Feedback Form Section -->
+  <section class="feedback-form-section">
+    <div class="container">
+      <h2 data-aos="fade-up">Share Your Thoughts</h2>
+      <p data-aos="fade-up" data-aos-delay="200">Fill out the form below and let us know how we did.</p>
+
+      <form class="feedback-form" data-aos="zoom-in" data-aos-delay="400">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" rows="5" placeholder="Write your feedback..." required></textarea>
+        </div>
+        <div class="rating">
+          <span>Rate Us:</span>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <button type="submit" class="btn-submit">Submit Feedback</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 data-aos="fade-up">What Students Say</h2>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="flip-left">
+          <div class="testimonial-card">
+            <p>"CampusConnect made it so easy to stay updated. The interface is smooth and clean!"</p>
+            <h6>- Ayesha</h6>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+          <div class="testimonial-card">
+            <p>"The feedback form is quick and responsive. Love how creative the site looks!"</p>
+            <h6>- Ali</h6>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="flip-left" data-aos-delay="400">
+          <div class="testimonial-card">
+            <p>"Great platform for events and updates. Submitting feedback was so easy!"</p>
+            <h6>- Sara</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2 data-aos="fade-up">Your Voice Matters</h2>
+    <p data-aos="fade-up" data-aos-delay="200">Join us in making CampusConnect even better by sharing your ideas.</p>
+    <a href="contact.html" class="btn" data-aos="zoom-in" data-aos-delay="400">Contact Us</a>
+  </section>
 
 <!-- ====== Footer Start ====== -->
 <footer>
@@ -95,7 +167,7 @@
   <!-- AOS Animation JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    AOS.init();
+    AOS.init({ duration : 1000, once:true});
   </script>
 
   <!-- Custom JS -->

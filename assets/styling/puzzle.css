@@ -1,0 +1,114 @@
+/* Center Button */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+/* Scholarship Button */
+.btn-scholarship {
+  padding: 12px 25px;
+  background: #ff7f32;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+.btn-scholarship:hover {
+  background: #0a2540;
+}
+
+/* Popup Overlay */
+.popup {
+  display: none; /* hidden by default */
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Popup Box */
+.popup-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  width: auto;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Puzzle Grid (exact 3x3 = 300px box) */
+.puzzle {
+  display: grid;
+  grid-template-columns: repeat(3, 100px); /* 3 columns */
+  grid-template-rows: repeat(3, 100px);    /* 3 rows */
+  gap: 0;                                  /* no gap between pieces */
+  width: 300px;                            /* fixed total width */
+  height: 300px;                           /* fixed total height */
+  margin: 20px auto;
+  border: 3px solid #0a2540;
+  box-sizing: content-box;
+}
+.puzzle-intro{
+    text-align: center;
+    margin-top: 15px;
+}
+.puzzle-intro h2{
+    font-weight: bold;
+}
+
+/* Puzzle pieces */
+.piece {
+  width: 100px;
+  height: 100px;
+  background-image: url("../images/logo.png"); /* apka logo path */
+  background-size: 300px 300px;  /* fit full puzzle image */
+  cursor: grab;
+  border: 1px solid #ccc;
+}
+
+/* Completed message */
+.completed {
+  font-size: 18px;
+  color: green;
+  font-weight: bold;
+  display: none;
+}
+
+/* Scholarship Form */
+#scholarshipForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#scholarshipForm input,
+#scholarshipForm button {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+#scholarshipForm button {
+  background: #ff7f32;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#scholarshipForm button:hover {
+  background: #0a2540;
+}

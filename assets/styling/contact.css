@@ -17,7 +17,8 @@
   animation: typing 3.5s steps(30, end) forwards, blink 0.75s step-end infinite;
   text-align: center;
   margin-bottom: 1rem;
-  padding-top: 15px;
+  padding-top: 20px;
+  margin: 0%;
 }
 
 /* Typing animation */
@@ -45,7 +46,7 @@
   font-size: 1.2rem;
   line-height: 1.8;
   color: white;
-  padding-bottom: 15px;
+  padding-bottom: 25px;
 }
 
 
