@@ -21,12 +21,12 @@
 
   <style>
     :root {
-      --bg:#ffffff;         /* Background white */
-      --card:#f1f5f9;       /* Light gray card */
-      --muted:#555;         /* Muted text */
+      --bg:#ffffff;         
+      --card:#f1f5f9;       
+      --muted:#555;         
       --glass: rgba(0,0,0,0.04);
       --glass-2: rgba(0,0,0,0.02);
-      --footer:#004080;     /* 👈 یہ وہی پرانا footer color ہے جو پہلے تھا */
+      --footer:#004080;   /* keep footer color same */
     }
     *{box-sizing:border-box}
     body {
@@ -65,11 +65,13 @@
     h2{font-size:26px;margin-top:40px;margin-bottom:14px}
     p{color:#333;font-size:16px}
 
-    /* Introduction تھوڑا بڑا */
+    /* Introduction bigger */
     .intro-text {
-      font-size:18px;
-      line-height:1.9;
+      font-size:19px;
+      line-height:2;
       color:#222;
+      max-width:900px;
+      margin:auto;
     }
 
     /* Achievements */
@@ -115,8 +117,60 @@
       color:white;
       transform:translateY(-4px);
     }
+    .card h3,
+    .card p {
+      transition: all 0.3s ease;
+    }
+    .card:hover h3,
+    .card:hover p {
+      color:white;
+    }
     .card h3{margin-top:0;margin-bottom:8px;font-size:18px}
     .card p{margin:0;font-size:14px}
+    .card .extra {
+      margin-top:12px;
+      font-style:italic;
+      font-weight:600;
+      font-size:13px;
+    }
+    /* Call To Action Section */
+.cta-section {
+  background: linear-gradient(135deg, #004080, #0066cc);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  margin-top: 60px;
+  border-radius: 16px;
+}
+.cta-section h2,
+.cta-section p {
+  color: white;  /* text always white */
+}
+.cta-section h2 {
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+.cta-section p {
+  font-size: 16px;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  line-height: 1.8;
+}
+.cta-btn {
+  display: inline-block;
+  background: white;
+  color: #004080;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.cta-btn:hover {
+  background: #f1f5f9;
+  color: #002855;
+}
+
   </style>
 </head>
 <body>
@@ -143,7 +197,7 @@
 
     <h2>Introduction</h2>
     <p class="intro-text">
-      ABC College of Engineering, located in Karachi and affiliated with XYZ University, is a premier institution that combines academic excellence with holistic student development. Established in 1998, the college offers a range of undergraduate and postgraduate programs with modern facilities, dedicated faculty, and vibrant student communities.
+      ABC College of Engineering, located in Karachi and affiliated with Karachi University, is a premier institution that combines academic excellence with holistic student development. Established in 1998, the college offers a range of undergraduate and postgraduate programs with modern facilities, dedicated faculty, and vibrant student communities. Our campus fosters innovation, creativity, leadership, and social responsibility, preparing students not only for successful careers but also to become valuable contributors to society.
     </p>
 
     <!-- Gallery under introduction -->
@@ -156,7 +210,7 @@
     <h2>Achievements</h2>
     <div class="achievements">
       <ul>
-        <li><strong>Academic Excellence:</strong> Ranked among the top colleges affiliated with XYZ University.</li>
+        <li><strong>Academic Excellence:</strong> Ranked among the top colleges affiliated with Karachi University.</li>
         <li><strong>Technical Success:</strong> Winners at national hackathons & robotics championships.</li>
         <li><strong>Cultural Recognition:</strong> Annual cultural fest draws participation across the region.</li>
         <li><strong>Sports Victories:</strong> Champions in inter-college cricket and athletics.</li>
@@ -177,70 +231,63 @@
       <div class="card">
         <h3>Sports Events</h3>
         <p>Inter-college sports meets and tournaments to encourage teamwork and fitness.</p>
+        
       </div>
     </div>
   </div>
+    <!-- ====== Call To Action Start ====== -->
+  <section class="cta-section">
+    <h2>Be a Part of Our Journey 🚀</h2>
+    <p>Join our vibrant community of learners, innovators, and leaders.  
+    Stay connected with events, achievements, and opportunities at CampusConnect.</p>
+    <a href="contact.html" class="cta-btn">Join Now</a>
+  </section>
+  <!-- ====== Call To Action End ====== -->
 
-<!-- ====== Footer Start ====== -->
-<footer>
-  <div class="footer-container">
-    
-    <!-- Logo Section -->
-    <div class="footer-logo">
-      <img src="assets/images/logo.png" alt="CampusConnect Logo" class="footer-img">
-      <h2 class="footer-title">CampusConnect</h2>
-      <p>Stay Updated, Stay Involved</p>
-    </div>
 
-    <!-- Quick Links -->
-    <div class="footer-links">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="feedback.html">Feedback</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-
-    <!-- Social Links -->
-    <div class="footer-social">
-      <h3>Follow Us</h3>
-      <p class="social-text">Stay connected with our latest events and updates.</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  <!-- ====== Footer Start ====== -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="assets/images/logo.png" alt="CampusConnect Logo" class="footer-img">
+        <h2 class="footer-title">CampusConnect</h2>
+        <p>Stay Updated, Stay Involved</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <p class="social-text">Stay connected with our latest events and updates.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- Bottom Bar -->
-  <div class="footer-bottom">
-    <p>&copy; 2025 CampusConnect. All Rights Reserved.</p>
-  </div>
-</footer>
-<!-- ====== Footer End ====== -->
-
-
+    <div class="footer-bottom">
+      <p>&copy; 2025 CampusConnect. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <!-- ====== Footer End ====== -->
 
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-  <!-- Bootstrap JS (with Popper) -->
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- AOS Animation JS -->
+  <!-- AOS Animation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-
-  <!-- Custom JS -->
+  <script>AOS.init();</script>
   <script src="assets/JS/navbar.js"></script>
 </body>
 </html>
- 
