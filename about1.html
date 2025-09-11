@@ -17,211 +17,118 @@
   <!-- AOS Animation CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/styling/navbar.css">
+
   <style>
-   :root{
-  --bg:#ffffff; 
-  --card:#f9f9f9;
-  --text:#1a1a1a;
-  --muted:#555; 
-  --glass: rgba(0,0,0,0.04);
-  --glass-2: rgba(0,0,0,0.02);
-  color-scheme: light;
-}
-*{box-sizing:border-box; margin:0; padding:0;}  /* reset */
+    :root {
+      --bg:#ffffff;         /* Background white */
+      --card:#f1f5f9;       /* Light gray card */
+      --muted:#555;         /* Muted text */
+      --glass: rgba(0,0,0,0.04);
+      --glass-2: rgba(0,0,0,0.02);
+      --footer:#004080;     /* 👈 یہ وہی پرانا footer color ہے جو پہلے تھا */
+    }
+    *{box-sizing:border-box}
+    body {
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background: var(--bg);
+      color:#111;
+      line-height:1.6;
+    }
+    .container{
+      max-width:1000px;
+      margin:100px auto 40px;
+      text-align:center;
+      padding:0 24px;
+    }
+    .gallery {
+      margin:20px auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:16px;
+      max-width:1000px;
+    }
+    .gallery img {
+      width:100%;
+      height:200px;
+      border-radius:12px;
+      object-fit:cover;
+      transition:all 0.3s ease;
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    }
+    .gallery img:hover {
+      transform:scale(1.05);
+      box-shadow:0 6px 18px rgba(0,0,0,0.4);
+    }
+    h1{font-size:36px;margin-bottom:14px}
+    h2{font-size:26px;margin-top:40px;margin-bottom:14px}
+    p{color:#333;font-size:16px}
 
-/* Body fix */
-body{
-  /* font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; */
-  background: var(--bg);
-  color: var(--text);
-  line-height:1.6;
-  padding-top: 80px; /* space for navbar */
-}
+    /* Introduction تھوڑا بڑا */
+    .intro-text {
+      font-size:18px;
+      line-height:1.9;
+      color:#222;
+    }
 
+    /* Achievements */
+    .achievements {margin-top:20px;text-align:left}
+    .achievements ul {
+      list-style:none;
+      padding:0;
+      display:grid;
+      gap:10px;
+    }
+    .achievements li {
+      background:var(--card);
+      padding:12px;
+      border-radius:12px;
+      border:1px solid var(--glass-2);
+      transition:all 0.3s ease;
+      color:black;
+    }
+    .achievements li:hover {
+      background:var(--footer);
+      color:white;
+      transform:translateY(-3px);
+    }
 
-/* Container fix */
-.main-container{
-  max-width:1000px;
-  margin:40px auto;
-  text-align:center;
-  padding:0 24px;
-}
-
-/* Hero Section */
-.hero-img{
-  width:100%;
-  height:500px;
-  overflow:hidden;
-}
-.hero-img img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-/* Gallery under hero */
-.gallery{
-  margin:20px auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:16px;
-  max-width:1000px;
-}
-.gallery img{
-  width:100%;
-  height:200px;
-  border-radius:12px;
-  object-fit:cover;
-  transition:all 0.3s ease;
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
-}
-.gallery img:hover{
-  transform:scale(1.05);
-  box-shadow:0 6px 18px rgba(0,0,0,0.2);
-}
-
-/* Headings & Paragraphs only outside footer */
-.main-container h1,
-.gallery h1,
-.achievements h1,
-.cards h1 { 
-  font-size:36px;
-  margin-bottom:14px;
-  color: var(--text);
-}
-
-.main-container h2,
-.gallery h2,
-.achievements h2,
-.cards h2 {
-  font-size:26px;
-  margin-top:40px;
-  margin-bottom:14px;
-  color: var(--text);
-}
-
-.main-container p,
-.gallery p,
-.achievements p,
-.cards p {
-  color:var(--muted);
-  font-size:16px;
-}
-
-/* Achievements */
-.achievements{
-  margin-top:20px;
-  text-align:left;
-}
-.achievements ul{
-  list-style:none;
-  padding:0;
-  display:grid;
-  gap:10px;
-}
-.achievements li{
-  background:var(--card);
-  padding:12px;
-  border-radius:12px;
-  border:1px solid var(--glass-2);
-  transition:all 0.3s ease;
-  color: var(--text);
-}
-.achievements li:hover{
-  background:#f1f1f1;
-  transform:translateY(-3px);
-  box-shadow:0 6px 18px rgba(0,0,0,0.1);
-}
-
-/* Cards (events etc.) */
-.cards{
-  margin-top:40px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-.cards .card{
-  background:var(--card);
-  padding:18px;
-  border-radius:14px;
-  text-align:left;
-  box-shadow:0 6px 18px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-}
-.cards .card:hover{
-  background:#f1f1f1;
-  transform:translateY(-4px);
-  box-shadow:0 8px 22px rgba(0,0,0,0.2);
-}
-.cards .card h3{
-  margin-top:0;
-  margin-bottom:8px;
-  font-size:18px;
-  color: var(--text);
-}
-.cards .card p{
-  margin:0;
-  font-size:14px;
-  color:var(--muted);
-}
-
-/* Typing effect for heading */
-.typing-text {
-    margin-top: 30px;
-  font-size: 3rem;
-  font-weight: bold;
-  color: #0a2540; /* Dark Blue */
-  border-right: 3px solid #007bff; /* Blinking cursor */
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  animation: typing 3.5s steps(30, end) forwards, blink 0.75s step-end infinite;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-/* Typing animation */
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-/* Cursor blink */
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
-/* Paragraph under heading */
-.intro-para {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 3rem auto;
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #333;
-}
+    /* Cards */
+    .cards {
+      margin-top:40px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+    .card {
+      background:var(--card);
+      padding:18px;
+      border-radius:14px;
+      text-align:left;
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      color:black;
+    }
+    .card:hover {
+      background:var(--footer);
+      color:white;
+      transform:translateY(-4px);
+    }
+    .card h3{margin-top:0;margin-bottom:8px;font-size:18px}
+    .card p{margin:0;font-size:14px}
   </style>
 </head>
 <body>
 
   <!-- Navbar -->
   <nav>
-     <div class="logo">
-  <a href="index.html" class="logo-link">
-    <img src="assets/images/logo.png" alt="CampusConnect Logo" class="logo-img">
-    <span class="logo-text">CampusConnect</span>
-  </a>
-</div>
-
+    <div class="logo">
+      <a href="index.html" class="logo-link">
+        <img src="assets/images/logo.png" alt="CampusConnect Logo" class="logo-img">
+        <span class="logo-text">CampusConnect</span>
+      </a>
+    </div>
     <ul class="nav-links" id="nav-links"></ul>
     <div class="hamburger" id="hamburger">
       <span></span>
@@ -230,22 +137,22 @@ body{
     </div>
   </nav>
   <!-- Navbar End -->
-  <!-- Full width image -->
-  
 
+  <div class="container">
+    <h1>About Our College</h1>
 
-<section class="gallery-intro">
-  <h2 class="typing-text">About Us</h2>
-  <p class="intro-para">
-    Welcome to <b>Campus Connect</b> 📸 –At CampusConnect, we bring students, faculty, and alumni together by highlighting campus events, fests, and achievements. Our goal is to keep you updated, involved, and connected with every moment that shapes college life.
-  </p>
-</section>
-  <!-- Gallery -->
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop" alt="Gallery 1">
-    <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?q=80&w=600&auto=format&fit=crop" alt="Gallery 2">
-    <img src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?q=80&w=600&auto=format&fit=crop" alt="Gallery 3">
-  </div>
+    <h2>Introduction</h2>
+    <p class="intro-text">
+      ABC College of Engineering, located in Karachi and affiliated with XYZ University, is a premier institution that combines academic excellence with holistic student development. Established in 1998, the college offers a range of undergraduate and postgraduate programs with modern facilities, dedicated faculty, and vibrant student communities.
+    </p>
+
+    <!-- Gallery under introduction -->
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop" alt="Gallery 1">
+      <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?q=80&w=600&auto=format&fit=crop" alt="Gallery 2">
+      <img src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?q=80&w=600&auto=format&fit=crop" alt="Gallery 3">
+    </div>
+
     <h2>Achievements</h2>
     <div class="achievements">
       <ul>
@@ -255,9 +162,6 @@ body{
         <li><strong>Sports Victories:</strong> Champions in inter-college cricket and athletics.</li>
         <li><strong>Research & Innovation:</strong> Faculty and students publish in reputed journals.</li>
         <li><strong>Community Outreach:</strong> Active participation in social impact projects and drives.</li>
-        <li><strong>Global Exposure:</strong> Student exchange programs with international universities.</li>
-        <li><strong>Alumni Success:</strong> Graduates excelling in multinational companies worldwide.</li>
-        
       </ul>
     </div>
 
@@ -274,7 +178,7 @@ body{
         <h3>Sports Events</h3>
         <p>Inter-college sports meets and tournaments to encourage teamwork and fitness.</p>
       </div>
-     
+    </div>
   </div>
 
 <!-- ====== Footer Start ====== -->
@@ -320,6 +224,7 @@ body{
   </div>
 </footer>
 <!-- ====== Footer End ====== -->
+
 
 
   <!-- jQuery -->
